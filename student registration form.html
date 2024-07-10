@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url("assets/images/st9.jpg") no-repeat fixed center;
+        background-size: cover;
+      }
+      .container {
+        width: 50%;
+        margin: 50px auto;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+        margin-left: 10px; /* Add space between the two buttons */
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      input[type="reset"] {
+        background-color: #f44336; /* Different color for reset button */
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+      }
+      input[type="reset"]:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Student Registration Form</h2>
+      <form
+        name="registrationForm"
+        action="#"
+        method="post"
+        onsubmit="return validateForm()"
+      >
+        <table>
+          <tr>
+            <th colspan="2">Personal Information</th>
+          </tr>
+          <tr>
+            <td>First Name</td>
+            <td>
+              <input
+                type="text"
+                name="FirstName"
+                maxlength="50"
+                placeholder="Enter your first name"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Last Name</td>
+            <td>
+              <input
+                type="text"
+                name="LastName"
+                maxlength="50"
+                placeholder="Enter your last name"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>
+              <input
+                type="email"
+                name="Email"
+                placeholder="Enter your email address"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Mobile Number</td>
+            <td>
+              <input
+                type="text"
+                name="MobileNumber"
+                maxlength="10"
+                placeholder="Enter your mobile number"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>
+              <label
+                ><input type="radio" name="Gender" value="Male" required />
+                Male</label
+              >
+              <label
+                ><input type="radio" name="Gender" value="Female" />
+                Female</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Date of Birth</td>
+            <td>
+              <input type="date" name="DOB" required />
+            </td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>
+              <textarea
+                name="Address"
+                rows="4"
+                placeholder="Enter your address"
+                required
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>City</td>
+            <td>
+              <input
+                type="text"
+                name="City"
+                placeholder="Enter your city"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Pin Code</td>
+            <td>
+              <input
+                type="number"
+                name="PinCode"
+                placeholder="Enter your pin code"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>State</td>
+            <td>
+              <input
+                type="text"
+                name="State"
+                placeholder="Enter your state"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>
+              <input
+                type="text"
+                name="Country"
+                value="Sri Lanka"
+                required
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Hobbies</td>
+            <td>
+              <label
+                ><input type="checkbox" name="HobbyDrawing" value="Drawing" />
+                Drawing</label
+              >
+              <label
+                ><input type="checkbox" name="HobbySinging" value="Singing" />
+                Singing</label
+              >
+              <label
+                ><input type="checkbox" name="HobbyDancing" value="Dancing" />
+                Dancing</label
+              >
+              <label
+                ><input type="checkbox" name="HobbyCooking" value="Cooking" />
+                Cooking</label
+              >
+              <label
+                ><input type="checkbox" name="HobbyOther" value="Other" />
+                Other</label
+              >
+              <input
+                type="text"
+                name="Other_Hobby"
+                maxlength="50"
+                placeholder="Enter other hobby"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Qualification</td>
+            <td>
+              <label
+                ><input
+                  type="checkbox"
+                  name="Qualification"
+                  value="High School"
+                />
+                Ordinary Level(O/L)</label
+              ><br />
+              <label
+                ><input
+                  type="checkbox"
+                  name="Qualification"
+                  value="Higher School"
+                />
+                Advanced Leval(A/L)</label
+              ><br />
+              <label
+                ><input
+                  type="checkbox"
+                  name="Qualification"
+                  value="Graduation"
+                />
+                Graduation (Bachelors)</label
+              ><br />
+              <label
+                ><input
+                  type="checkbox"
+                  name="Qualification"
+                  value="Post Graduation"
+                />
+                Post Graduation (Masters)</label
+              ><br />
+              <label
+                ><input type="checkbox" name="Qualification" value="Phd" />
+                Phd</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Courses Applied For</td>
+            <td>
+              <label
+                ><input type="radio" name="Course" value="BCA" /> BCA (Bachelor
+                of Computer Applications)</label
+              ><br />
+              <label
+                ><input type="radio" name="Course" value="BCom" /> B.Com
+                (Bachelor of Commerce)</label
+              ><br />
+              <label
+                ><input type="radio" name="Course" value="BSc" /> B.Sc (Bachelor
+                of Science)</label
+              ><br />
+              <label
+                ><input type="radio" name="Course" value="BA" /> BA (Bachelor of
+                Arts)</label
+              ><br />
+              <label
+                ><input type="radio" name="Course" value="MCA" /> MCA (Master of
+                Computer Applications)</label
+              ><br />
+              <label
+                ><input type="radio" name="Course" value="MCom" /> M.Com (Master
+                of Commerce)</label
+              ><br />
+              <label
+                ><input type="radio" name="Course" value="MSc" /> M.Sc (Master
+                of Science)</label
+              ><br />
+              <label
+                ><input type="radio" name="Course" value="MA" /> MA (Master of
+                Arts)</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="submit" value="Submit" />
+              <input type="reset" value="Reset" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        var mobileNumber =
+          document.forms["registrationForm"]["MobileNumber"].value;
+        if (isNaN(mobileNumber) || mobileNumber.length != 10) {
+          alert("Mobile number must be a 10-digit number.");
+          return false;
+        }
+        // You can add more validation checks here for other fields
+        return true;
+      }
+    </script>
+  </body>
+</html>
